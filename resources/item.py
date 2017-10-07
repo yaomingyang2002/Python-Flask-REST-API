@@ -53,8 +53,7 @@ class Item(Resource): #define Resource
         item = ItemModel.find_by_name(name)
 
         if item is None:
-            # item = ItemModel(name, data['price'], data['store_id'])
-            item = ItemModel(name, *data)
+            item = ItemModel(name, data['price'], data['store_id'])
         else:
             item.price = data['price']
 
